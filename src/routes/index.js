@@ -1,12 +1,12 @@
 import express from 'express'
-import authJwt from './AuthJWT.js'
-import OAuth from './OAuth.js'
-import { showUserJwt } from '../controller/ShowUser.js'
+import jwtRouter from './jwtRoute.js'
+import oauthRouter from './oauthRoute.js'
+import basicRouter from './basicRoute.js'
 
 const app = express.Router()
 
-app.use('/jwt', authJwt)
-app.get('/jwt', showUserJwt)
-app.use('/google', OAuth)
+app.use('/jwt', jwtRouter)
+app.use('/google', oauthRouter)
+app.use('/basic', basicRouter)
 
 export default app

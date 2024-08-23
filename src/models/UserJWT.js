@@ -1,13 +1,14 @@
 import { DataTypes } from "sequelize";
 import database from "../config/Database.js";
 
-const UserJWT = database.define('user_jwt', {
+const UserJWT = database.define('jwt_user', {
     name: {
         type: DataTypes.STRING,
         allowNull: false
     },
     email: {
         type: DataTypes.STRING,
+        unique: true,
         allowNull: false
     },
     password: {
